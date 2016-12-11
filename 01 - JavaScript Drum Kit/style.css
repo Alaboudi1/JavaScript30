@@ -23,7 +23,7 @@ body,html {
   margin:1rem;
   font-size: 1.5rem;
   padding:1rem .5rem;
-  transition:all .07s;
+  transition:all 1s;
   width:100px;
   text-align: center;
   color:white;
@@ -35,16 +35,34 @@ body,html {
   transform:scale(1.1);
   border-color:#ffc600;
   box-shadow: 0 0 10px #ffc600;
-}
+  color:#ffc600;
 
+}
+.click {
+  border-color:red;
+  box-shadow: 0 0 10p red;
+  color:red;
+
+
+}
 kbd {
   display: block;
   font-size: 40px;
 }
-
+.text {
+  display: block;
+  font-size: 40px;
+  color:white;
+}
 .sound {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   color:#ffc600;
+}
+
+#score{
+   font-size: 5rem;
+   color:#ffc600;
+
 }
