@@ -34,6 +34,10 @@
     }
 
     .clock {
+      transform: rotate(90deg);
+      background: url(clock2.jpg);
+      background-repeat: no-repeat;
+      background-size:cover;
       width: 30rem;
       height: 30rem;
       border:20px solid white;
@@ -61,13 +65,43 @@
       background:black;
       position: absolute;
       top:50%;
+      transform-origin: 100%;
+      transition: all .05s;
+    transition-timing-function: cubic-bezier(0.1, 2.71, 0.48, 1.15);
+    }
+    .second-hand {
+      width:50%;
+      height:4px;
+      background:black;
+      position: absolute;
+      top:50%;
+      transform-origin: 100%;
+      transition: all .05s;
+    transition-timing-function: cubic-bezier(0.1, 2.71, 0.48, 1.15);
     }
 
   </style>
 
   <script>
+  const secondHand = document.querySelector('.second-hand');
+  const minuteHand = document.querySelector('.min-hand');
+  const hourHand = document.querySelector('.hour-hand');
 
+  function setDate(){
+    const now = new Date();
+    const second = now.getSeconds();
+    const minute = now.getMinutes();
+    const hour = now.getHours();
+    const secondDegree = second*6;
+    const minuteDegree = minute*6;
+    const hourDegree   = hour*30;
+    console.log(`${hour} --> ${secondDegree}`);
+    secondHand.style.transform= `rotate(${secondDegree}deg)`;
+    minuteHand.style.transform= `rotate(${minuteDegree}deg)`;
+    hourHand.style.transform= `rotate(${hourDegree}deg)`;
 
+  }
+   setInterval(setDate,1000);
   </script>
 </body>
 </html>
